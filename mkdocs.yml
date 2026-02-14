@@ -21,15 +21,48 @@ theme:
     - django
 
 nav:
-  - Home: maysano.md
-#  - Maysano: maysano.md
-#  - Getting Started: getting-started.md
-#  - User Guide: user-guide/
-#  - Developer Guide: dev-guide/
-#  - About:
-#    - Release Notes: about/release-notes.md
-#    - Contributing: about/contributing.md
-#    - License: about/license.md
+  - 1. Getting Started:
+      - What is Maysano: getting-started/what-is-maysano.md
+      - Core concepts: getting-started/core-concepts.md
+      - First product walkthrough: getting-started/first-product-walkthrough.md
+
+  - 2. Product Model:
+      - Objectives: product-model/objectives.md
+      - Outcome KPIs: product-model/outcome-kpis.md
+      - Internal KPIs: product-model/internal-kpis.md
+      - Data Products: product-model/data-products.md
+      - Governance Components: product-model/governance-components.md
+      - Templates: product-model/templates.md
+
+  - 3. Roles:
+      - Product Manager: roles/product-manager.md
+      - Business Owner: roles/business-owner.md
+      - Steward: roles/steward.md
+      - Admin: roles/admin.md
+
+  - 4. Governance Library:
+      - DQ: governance-library/dq.md
+      - SLA: governance-library/sla.md
+      - Access: governance-library/access.md
+      - Pricing: governance-library/pricing.md
+      - Reusable components: governance-library/reusable-components.md
+
+  - 5. API & Integrations:
+      - REST API: api/rest-api.md
+      - Versioning model: api/versioning-model.md
+      - Authentication: api/authentication.md
+      - Events: api/events.md
+
+  - 6. Security & Compliance:
+      - Data handling: security/data-handling.md
+      - Hosting model: security/hosting-model.md
+      - Access controls: security/access-controls.md
+
+  - 7. AI in Maysano:
+      - What AI does: ai/what-ai-does.md
+      - What AI does not do: ai/what-ai-does-not-do.md
+      - Human-in-control model: ai/human-in-control-model.md
+
 
 extra_css:
   - stylesheets/extra.css
