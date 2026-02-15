@@ -10,6 +10,7 @@ The AI supports multiple workflows across the platform:
 
 ### Assistant Chat
 Users can interact conversationally with the AI to:
+
 - Clarify governance concepts
 - Understand ODPS structures
 - Explore best practices
@@ -23,6 +24,7 @@ The assistant has contextual knowledge of ODPS and platform patterns to provide 
 Users can describe a data product in natural language, and the AI generates a structured YAML specification aligned with the ODPS standard.
 
 Generated specifications:
+
 - Follow structural templates
 - Include required fields
 - Respect validation rules
@@ -32,6 +34,7 @@ Generated specifications:
 
 ### Specification Validation
 The AI can review existing specifications and:
+
 - Identify missing fields
 - Detect structural inconsistencies
 - Highlight potential governance gaps
@@ -65,6 +68,7 @@ This supports alignment between governance, product, and business roles.
 
 ### Schema Assistance (Optional Integrations)
 When integrated with metadata or catalog systems, the AI can:
+
 - Propose data schemas
 - Assist with schema mapping
 - Support column matching tasks
@@ -73,6 +77,7 @@ When integrated with metadata or catalog systems, the AI can:
 
 ### Executive Summaries & Insights
 The AI can generate:
+
 - Executive summaries
 - Product overviews
 - Structured insights
@@ -118,7 +123,7 @@ flowchart TD
     U[User] --> UI[AI Assistant UI]
     U --> Builder[Product Builder]
     U --> Validator[Specification Validator]
-    U --> Mapper[Schema & Mapping (optional)]
+    U --> Mapper[Schema & Mapping]
   end
 
   subgraph API["Backend API"]
@@ -148,7 +153,7 @@ flowchart TD
   end
 
   subgraph KB["Knowledge & Rules"]
-    R[ODPS reference + templates + validation rules]
+    R["ODPS reference + templates + validation rules"]
     R -.-> Loop
   end
 
@@ -167,3 +172,4 @@ flowchart TD
     MET[Usage, cost, latency metrics]
     Loop -.-> MET
   end
+```
