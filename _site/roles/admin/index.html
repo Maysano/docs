@@ -77,14 +77,46 @@
               </ul>
               <p class="caption"><span class="caption-text">3. Roles</span></p>
               <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../rolesoverview/">Roles Overview</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../product-manager/">Product Manager</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../business-owner/">Business Owner</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../business-owner/">Outcome Owner</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../steward/">Steward</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Admin</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#role-essence">Role Essence</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#core-accountability">Core Accountability</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#key-responsibilities">Key Responsibilities</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-manage-users-and-roles">1) Manage Users and Roles</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-configure-tenant-and-environment-settings">2) Configure Tenant and Environment Settings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-manage-integrations">3) Manage Integrations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-enforce-access-controls">4) Enforce Access Controls</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-support-operational-stability">5) Support Operational Stability</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#explicit-non-responsibilities">Explicit Non-Responsibilities</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#decision-authority">Decision Authority</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#primary-outputs-in-maysano">Primary Outputs in Maysano</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#collaboration-model">Collaboration Model</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#interaction-with-ai">Interaction with AI</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#success-indicators">Success Indicators</a>
+    </li>
     </ul>
                   </li>
               </ul>
@@ -154,7 +186,145 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="admin">admin<a class="headerlink" href="#admin" title="Permanent link"></a></h1>
+                <h1 id="admin">Admin<a class="headerlink" href="#admin" title="Permanent link"></a></h1>
+<p><em>(Canonical: Platform Administrator)</em></p>
+<p>The Admin in Maysano owns the <strong>platform environment</strong> and ensures that the system remains secure, stable, and correctly configured.</p>
+<p>This role is responsible for operational integrity — not for business logic or product structure.</p>
+<p>If the Outcome Owner defines direction, the Product Manager structures products, and the Steward safeguards governance, the Admin ensures the platform runs reliably.</p>
+<hr />
+<h2 id="role-essence">Role Essence<a class="headerlink" href="#role-essence" title="Permanent link"></a></h2>
+<p>The Admin owns the <strong>operational layer</strong> of Maysano.</p>
+<p>This includes:</p>
+<ul>
+<li>User and role management  </li>
+<li>Access configuration  </li>
+<li>Tenant settings  </li>
+<li>Integration setup  </li>
+<li>Environment configuration  </li>
+</ul>
+<p>The Admin ensures that the right people have the right access to the right capabilities.</p>
+<hr />
+<h2 id="core-accountability">Core Accountability<a class="headerlink" href="#core-accountability" title="Permanent link"></a></h2>
+<p>The Admin is accountable for:</p>
+<ul>
+<li>Platform configuration</li>
+<li>Access control enforcement</li>
+<li>Role assignment integrity</li>
+<li>Tenant-level settings</li>
+<li>Security and operational stability</li>
+</ul>
+<p>If the platform becomes misconfigured or insecure, the Admin has failed.</p>
+<hr />
+<h2 id="key-responsibilities">Key Responsibilities<a class="headerlink" href="#key-responsibilities" title="Permanent link"></a></h2>
+<h3 id="1-manage-users-and-roles">1) Manage Users and Roles<a class="headerlink" href="#1-manage-users-and-roles" title="Permanent link"></a></h3>
+<p>The Admin:</p>
+<ul>
+<li>Assigns roles to users</li>
+<li>Maintains user access levels</li>
+<li>Ensures separation of duties</li>
+<li>Removes access when required</li>
+</ul>
+<p>Access must reflect organizational structure and governance policy.</p>
+<hr />
+<h3 id="2-configure-tenant-and-environment-settings">2) Configure Tenant and Environment Settings<a class="headerlink" href="#2-configure-tenant-and-environment-settings" title="Permanent link"></a></h3>
+<p>The Admin manages:</p>
+<ul>
+<li>Organizational configuration</li>
+<li>Feature enablement</li>
+<li>Environment-level controls</li>
+<li>System-wide defaults</li>
+</ul>
+<p>These settings shape how Maysano behaves across all roles.</p>
+<hr />
+<h3 id="3-manage-integrations">3) Manage Integrations<a class="headerlink" href="#3-manage-integrations" title="Permanent link"></a></h3>
+<p>The Admin:</p>
+<ul>
+<li>Configures external integrations</li>
+<li>Manages API credentials and connectivity</li>
+<li>Ensures secure communication with connected systems</li>
+<li>Oversees integration-level permissions</li>
+</ul>
+<p>Integration configuration must not compromise governance boundaries.</p>
+<hr />
+<h3 id="4-enforce-access-controls">4) Enforce Access Controls<a class="headerlink" href="#4-enforce-access-controls" title="Permanent link"></a></h3>
+<p>The Admin ensures that:</p>
+<ul>
+<li>Governance roles are respected</li>
+<li>Sensitive configuration is protected</li>
+<li>Access rights are auditable</li>
+<li>Role boundaries are enforced technically</li>
+</ul>
+<p>The Admin enforces separation of concerns at the platform level.</p>
+<hr />
+<h3 id="5-support-operational-stability">5) Support Operational Stability<a class="headerlink" href="#5-support-operational-stability" title="Permanent link"></a></h3>
+<p>The Admin:</p>
+<ul>
+<li>Monitors operational signals</li>
+<li>Troubleshoots configuration issues</li>
+<li>Coordinates environment updates</li>
+<li>Ensures the platform remains available and consistent</li>
+</ul>
+<hr />
+<h2 id="explicit-non-responsibilities">Explicit Non-Responsibilities<a class="headerlink" href="#explicit-non-responsibilities" title="Permanent link"></a></h2>
+<p>The Admin does not:</p>
+<ul>
+<li>Define business objectives</li>
+<li>Define outcome KPIs</li>
+<li>Define product scope</li>
+<li>Approve governance components</li>
+<li>Decide product structure</li>
+</ul>
+<p>Operational authority does not extend into business or governance ownership.</p>
+<hr />
+<h2 id="decision-authority">Decision Authority<a class="headerlink" href="#decision-authority" title="Permanent link"></a></h2>
+<p>The Admin has final authority over:</p>
+<ul>
+<li>Role assignments</li>
+<li>Platform configuration</li>
+<li>Access control enforcement</li>
+<li>Integration settings</li>
+</ul>
+<p>Platform integrity overrides convenience.</p>
+<hr />
+<h2 id="primary-outputs-in-maysano">Primary Outputs in Maysano<a class="headerlink" href="#primary-outputs-in-maysano" title="Permanent link"></a></h2>
+<p>The Admin maintains:</p>
+<ul>
+<li>User-role mappings</li>
+<li>Tenant configuration settings</li>
+<li>Integration configuration</li>
+<li>Access control definitions</li>
+<li>Operational configuration state</li>
+</ul>
+<hr />
+<h2 id="collaboration-model">Collaboration Model<a class="headerlink" href="#collaboration-model" title="Permanent link"></a></h2>
+<p>The Admin collaborates with:</p>
+<ul>
+<li><strong>Outcome Owner</strong> — when strategic visibility or access affects decision-making</li>
+<li><strong>Product Manager</strong> — when access models or integrations affect product deployment</li>
+<li><strong>Steward</strong> — when governance rules require technical enforcement</li>
+</ul>
+<p>The Admin ensures the platform structure supports — but does not redefine — role authority.</p>
+<hr />
+<h2 id="interaction-with-ai">Interaction with AI<a class="headerlink" href="#interaction-with-ai" title="Permanent link"></a></h2>
+<p>AI may assist the Admin by:</p>
+<ul>
+<li>Summarizing configuration state</li>
+<li>Highlighting potential access inconsistencies</li>
+<li>Suggesting configuration improvements</li>
+<li>Assisting in integration diagnostics</li>
+</ul>
+<p>AI does not execute changes without Admin approval.</p>
+<hr />
+<h2 id="success-indicators">Success Indicators<a class="headerlink" href="#success-indicators" title="Permanent link"></a></h2>
+<p>An Admin is successful when:</p>
+<ul>
+<li>Access is correctly enforced</li>
+<li>Platform configuration remains stable</li>
+<li>Integrations operate securely</li>
+<li>Governance separation is technically enforced</li>
+<li>Operational incidents are minimized</li>
+</ul>
+<p>The Admin ensures that Maysano remains a controlled and reliable operating environment.</p>
               
             </div>
           </div><footer>

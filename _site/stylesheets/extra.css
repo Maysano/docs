@@ -1,189 +1,188 @@
 /* =========================================================
-   MAYSANO — Clean Full Width RTD Override (Stable Version)
+   Maysano Docs – Custom ReadTheDocs Theme Overrides
    ========================================================= */
 
-:root {
-  --m-bg: #0E1B24;
-  --m-surface: #132734;
-  --m-surface-2: #1C3442;
-  --m-content-bg: #102530;
-  --m-text: #E6EEF4;
-  --m-muted: #B7C2CC;
-  --m-accent: #C9A227;
-  --m-border: rgba(255,255,255,0.08);
+/* ==============================
+   GLOBAL COLORS & TYPOGRAPHY
+   ============================== */
+
+body {
+  background-color: #0f2c35;
+  color: rgba(255,255,255,0.92);
 }
 
-/* =========================================================
-   FULL WIDTH CONTENT
-   ========================================================= */
+.wy-nav-content {
+  background: #123640;
+}
+
+/* Headings */
+.wy-nav-content h1,
+.wy-nav-content h2,
+.wy-nav-content h3,
+.wy-nav-content h4 {
+  color: #ffffff;
+}
+
+/* Links */
+.wy-nav-content a {
+  color: #ffd24d;
+}
+.wy-nav-content a:hover {
+  color: #ffcc00;
+}
+
+/* ==============================
+   FULL WIDTH CONTENT FIX
+   ============================== */
 
 .wy-nav-content {
-  max-width: none !important;
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 40px 60px !important;
-  background: var(--m-content-bg) !important;
+  max-width: 100% !important;
 }
 
 .wy-nav-content-wrap {
-  margin-left: 300px !important;
-  background: var(--m-bg) !important;
+  margin-left: 300px;
 }
 
-.rst-content {
-  max-width: none !important;
+@media screen and (max-width: 768px) {
+  .wy-nav-content-wrap {
+    margin-left: 0;
+  }
 }
 
-/* =========================================================
-   SIDEBAR STRUCTURE (STABLE VERSION)
-   ========================================================= */
+/* ==============================
+   SIDEBAR STYLING
+   ============================== */
 
 .wy-nav-side {
-  background: var(--m-surface) !important;
-  border-right: 1px solid var(--m-border) !important;
+  background: #0f2c35;
 }
 
-/* Keep default RTD scrolling behavior — do NOT override with flex */
-.wy-side-scroll {
-  height: 100vh;
-  overflow-y: auto;
-}
-
-/* Sticky header */
 .wy-side-nav-search {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--m-surface-2) !important;
-  border-bottom: 1px solid var(--m-border) !important;
-  padding: 16px 14px 20px 14px !important;
-}
-
-/* Add clean separation below search */
-.wy-side-nav-search::after {
-  content: "";
-  display: block;
-  margin-top: 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-/* Space before first menu item */
-.wy-menu-vertical {
-  padding-top: 14px !important;
-  padding-bottom: 24px !important;
-}
-
-/* Prevent scroll-to-active from hiding header */
-.wy-menu-vertical a {
-  scroll-margin-top: 130px;
-}
-
-/* =========================================================
-   SIDEBAR STYLING
-   ========================================================= */
-
-.wy-side-nav-search input[type="text"] {
-  background: rgba(255,255,255,0.06) !important;
-  color: var(--m-text) !important;
-  border: 1px solid var(--m-border) !important;
-  border-radius: 999px !important;
-}
-
-.wy-menu-vertical li {
-  margin: 4px 0;
+  background: #123640;
 }
 
 .wy-menu-vertical a {
-  color: var(--m-muted) !important;
-  transition: all 0.15s ease;
+  color: rgba(255,255,255,0.85);
 }
 
 .wy-menu-vertical a:hover {
-  background: rgba(201,162,39,0.12) !important;
-  color: #FFF !important;
+  background: rgba(255,255,255,0.05);
+  color: #ffffff;
 }
 
 /* Active item */
-.wy-menu-vertical li.current,
-.wy-menu-vertical li.current > a {
-  background: var(--m-surface-2) !important;
-  color: #FFF !important;
-  border-left: 4px solid var(--m-accent) !important;
-  padding-left: 11px !important;
-  font-weight: 600 !important;
+.wy-menu-vertical .current > a {
+  background: rgba(255,210,77,0.15) !important;
+  border-left: 4px solid #ffd24d;
+  color: #ffffff !important;
+  padding-left: 12px;
 }
 
-/* Section captions */
+/* Section titles (1. Getting Started etc) */
 .wy-menu-vertical p.caption {
-  color: var(--m-accent) !important;
-  letter-spacing: 0.06em;
+  color: #ffd24d;
   font-weight: 600;
-  font-size: 11px !important;
-  opacity: 0.85 !important;
+  margin-top: 1rem;
 }
 
-/* =========================================================
-   CONTENT TYPOGRAPHY
-   ========================================================= */
+/* ==============================
+   REMOVE GITHUB BADGE (if desired)
+   ============================== */
 
-.rst-content {
-  color: var(--m-text) !important;
-}
-
-.rst-content h1,
-.rst-content h2,
-.rst-content h3 {
-  color: #FFF !important;
-  font-weight: 650 !important;
-}
-
-.rst-content p,
-.rst-content li {
-  color: rgba(230,238,244,0.9) !important;
-  line-height: 1.7 !important;
-}
-
-.rst-content a {
-  color: var(--m-accent) !important;
-}
-
-.rst-content a:hover {
-  opacity: 0.85;
-}
-
-/* =========================================================
-   CODE BLOCKS
-   ========================================================= */
-
-.rst-content pre code,
-.rst-content code {
-  background: rgba(255,255,255,0.06) !important;
-  color: var(--m-text) !important;
-  border: 1px solid var(--m-border) !important;
-  border-radius: 6px !important;
-}
-
-/* =========================================================
-   BUTTONS (Prev / Next)
-   ========================================================= */
-
-.rst-content .btn,
-.rst-content .btn-neutral {
-  background: var(--m-surface-2) !important;
-  color: var(--m-text) !important;
-  border: 1px solid var(--m-border) !important;
-  border-radius: 10px !important;
-  box-shadow: none !important;
-}
-
-.rst-content .btn:hover {
-  border-color: rgba(201,162,39,0.45) !important;
-}
-
-/* =========================================================
-   FOOTER REMOVAL
-   ========================================================= */
-
-footer {
+.wy-side-nav-search > a.icon.icon-home::after {
   display: none !important;
 }
+
+/* Hide "Edit on GitHub" link */
+.wy-breadcrumbs .wy-breadcrumbs-aside {
+  display: none !important;
+}
+
+/* ==============================
+   TABLE STYLING (FIXED)
+   ============================== */
+
+.wy-nav-content .rst-content table,
+.wy-nav-content .rst-content table.docutils,
+.wy-nav-content .wy-table-responsive table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 1.25rem 0 !important;
+
+  background: rgba(255,255,255,0.03) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+}
+
+/* Header cells */
+.wy-nav-content .rst-content table thead th,
+.wy-nav-content .wy-table-responsive table thead th {
+  background: rgba(255,255,255,0.08) !important;
+  color: rgba(255,255,255,0.98) !important;
+  font-weight: 700 !important;
+
+  padding: 12px 14px !important;
+  border-bottom: 1px solid rgba(255,255,255,0.22) !important;
+}
+
+/* Body cells */
+.wy-nav-content .rst-content table td,
+.wy-nav-content .rst-content table th,
+.wy-nav-content .wy-table-responsive table td,
+.wy-nav-content .wy-table-responsive table th {
+  color: rgba(255,255,255,0.92) !important;
+  padding: 12px 14px !important;
+
+  border-bottom: 1px solid rgba(255,255,255,0.12) !important;
+  border-right: 1px solid rgba(255,255,255,0.10) !important;
+}
+
+/* Remove last column border */
+.wy-nav-content .rst-content table td:last-child,
+.wy-nav-content .rst-content table th:last-child,
+.wy-nav-content .wy-table-responsive table td:last-child,
+.wy-nav-content .wy-table-responsive table th:last-child {
+  border-right: 0 !important;
+}
+
+/* Zebra striping */
+.wy-nav-content .rst-content table tbody tr:nth-child(odd),
+.wy-nav-content .wy-table-responsive table tbody tr:nth-child(odd) {
+  background: rgba(255,255,255,0.02) !important;
+}
+.wy-nav-content .rst-content table tbody tr:nth-child(even),
+.wy-nav-content .wy-table-responsive table tbody tr:nth-child(even) {
+  background: rgba(0,0,0,0.06) !important;
+}
+
+/* Hover */
+.wy-nav-content .rst-content table tbody tr:hover,
+.wy-nav-content .wy-table-responsive table tbody tr:hover {
+  background: rgba(255,210,77,0.10) !important;
+}
+
+/* Table links */
+.wy-nav-content .rst-content table a,
+.wy-nav-content .wy-table-responsive table a {
+  color: #ffd24d !important;
+}
+.wy-nav-content .rst-content table a:hover,
+.wy-nav-content .wy-table-responsive table a:hover {
+  text-decoration: underline !important;
+}
+
+/* ==============================
+   SEARCH BOX STYLING
+   ============================== */
+
+.wy-side-nav-search input[type="text"] {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #ffffff;
+}
+
+.wy-side-nav-search input[type="text"]::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+.wy-nav-content-wrap {
+    background: #123640;
+  }

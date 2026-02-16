@@ -57,6 +57,50 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Core concepts</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-data-product">1. Data Product</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-product-version">2. Product Version</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-lifecycle-state-odps-aligned">3. Lifecycle State (ODPS Aligned)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#announcement">announcement</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#draft">draft</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#development">development</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#testing">testing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#acceptance">acceptance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#production">production</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sunset">sunset</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#retired">retired</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-roles-and-accountability-boundaries">4. Roles and Accountability Boundaries</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-product-strategy">5. Product Strategy</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-business-objective">6. Business Objective</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-kpi-key-performance-indicator">7. KPI (Key Performance Indicator)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-governance-component-library">8. Governance Component Library</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#9-policy-vs-evidence">9. Policy vs. Evidence</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#10-quality-signal">10. Quality Signal</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#11-drift">11. Drift</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#12-approval-gate">12. Approval Gate</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#13-operating-view">13. Operating View</a>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../first-product-walkthrough/">First product walkthrough</a>
@@ -79,9 +123,11 @@
               </ul>
               <p class="caption"><span class="caption-text">3. Roles</span></p>
               <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../roles/rolesoverview/">Roles Overview</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../roles/product-manager/">Product Manager</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../roles/business-owner/">Business Owner</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../roles/business-owner/">Outcome Owner</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../roles/steward/">Steward</a>
                   </li>
@@ -154,7 +200,179 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="core-concepts">core concepts<a class="headerlink" href="#core-concepts" title="Permanent link"></a></h1>
+                <h1 id="core-concepts-of-maysano">Core Concepts of Maysano<a class="headerlink" href="#core-concepts-of-maysano" title="Permanent link"></a></h1>
+<p>Maysano is an operating layer for data products. It connects business intent, governance control, and execution discipline into one coherent system. These core concepts define how the platform is structured and how teams collaborate inside it.</p>
+<hr />
+<h2 id="1-data-product">1. Data Product<a class="headerlink" href="#1-data-product" title="Permanent link"></a></h2>
+<p>A <strong>Data Product</strong> in Maysano is a governed, versioned, outcome-driven asset that delivers measurable business value. It is not just a dataset.</p>
+<p>A data product in Maysano is defined by:</p>
+<ul>
+<li>a clear purpose and expected outcomes</li>
+<li>accountable ownership</li>
+<li>governance controls that are explicit and reusable</li>
+<li>lifecycle status and versioning</li>
+<li>measurable quality and operational signals</li>
+</ul>
+<p>A data product can be produced from many technical sources (pipelines, lakehouse tables, APIs, event streams), but Maysano focuses on the product layer: the structure, accountability, and governance that makes it operationally usable and trustworthy.</p>
+<hr />
+<h2 id="2-product-version">2. Product Version<a class="headerlink" href="#2-product-version" title="Permanent link"></a></h2>
+<p>A <strong>Product Version</strong> is an immutable snapshot of a data product at a point in time.</p>
+<p>Once a version is released (e.g., to production), it should not be modified. If changes are needed, a new version is created. This ensures that consumers, contracts, SLAs, and audits can always refer to a stable definition of what was delivered.</p>
+<p>Versioning in Maysano supports:</p>
+<ul>
+<li>traceability of changes</li>
+<li>safe evolution without breaking consumers</li>
+<li>clean governance audits</li>
+<li>separation between draft work and released work</li>
+</ul>
+<hr />
+<h2 id="3-lifecycle-state-odps-aligned">3. Lifecycle State (ODPS Aligned)<a class="headerlink" href="#3-lifecycle-state-odps-aligned" title="Permanent link"></a></h2>
+<p>Maysano follows the lifecycle model defined in the Open Data Product Specification (ODPS).</p>
+<p>The <code>status</code> field of a data product version MUST be one of the following:</p>
+<ul>
+<li><code>announcement</code></li>
+<li><code>draft</code></li>
+<li><code>development</code></li>
+<li><code>testing</code></li>
+<li><code>acceptance</code></li>
+<li><code>production</code></li>
+<li><code>sunset</code></li>
+<li><code>retired</code></li>
+</ul>
+<p>Each status represents a distinct stage in the governed evolution of a data product.</p>
+<h3 id="announcement">announcement<a class="headerlink" href="#announcement" title="Permanent link"></a></h3>
+<p>The product has been formally announced but is not yet available. This stage is typically used to signal intent and upcoming availability to stakeholders.</p>
+<h3 id="draft">draft<a class="headerlink" href="#draft" title="Permanent link"></a></h3>
+<p>The product definition exists but is incomplete. It is not validated and not intended for consumption.</p>
+<h3 id="development">development<a class="headerlink" href="#development" title="Permanent link"></a></h3>
+<p>The product is under active implementation. Technical realization and governance configuration are in progress.</p>
+<h3 id="testing">testing<a class="headerlink" href="#testing" title="Permanent link"></a></h3>
+<p>The product is technically implemented and undergoing validation, quality checks, and controlled evaluation.</p>
+<h3 id="acceptance">acceptance<a class="headerlink" href="#acceptance" title="Permanent link"></a></h3>
+<p>The product has passed testing and is awaiting formal approval or final validation before production release.</p>
+<h3 id="production">production<a class="headerlink" href="#production" title="Permanent link"></a></h3>
+<p>The product is released and available to consumers under defined SLAs and governance commitments.</p>
+<h3 id="sunset">sunset<a class="headerlink" href="#sunset" title="Permanent link"></a></h3>
+<p>The product is still available but marked for decommissioning. Consumers should prepare migration.</p>
+<h3 id="retired">retired<a class="headerlink" href="#retired" title="Permanent link"></a></h3>
+<p>The product is no longer available and should not be used.</p>
+<hr />
+<p>By aligning lifecycle states with ODPS, Maysano ensures interoperability, consistent governance semantics, and traceability across systems.</p>
+<hr />
+<h2 id="4-roles-and-accountability-boundaries">4. Roles and Accountability Boundaries<a class="headerlink" href="#4-roles-and-accountability-boundaries" title="Permanent link"></a></h2>
+<p>Maysano is built on clear separation of accountability. Collaboration is expected, but decision rights are not blurred.</p>
+<p>Core roles typically include:</p>
+<ul>
+<li><strong>Product Manager</strong>: defines intent, value, and alignment to business outcomes</li>
+<li><strong>Outcome Owner</strong>: owns the business KPI and validates whether value is realized</li>
+<li><strong>Steward</strong>: owns governance consistency and approves compliance to standards</li>
+<li><strong>Admin</strong>: owns platform control, access, and operational configuration</li>
+</ul>
+<p>The platform is designed so that each role has:</p>
+<ul>
+<li>a distinct set of actions</li>
+<li>clear decision boundaries</li>
+<li>an explicit trail of approvals and changes</li>
+</ul>
+<hr />
+<h2 id="5-product-strategy">5. Product Strategy<a class="headerlink" href="#5-product-strategy" title="Permanent link"></a></h2>
+<p><strong>Product Strategy</strong> is the structured link between a data product and the business outcomes it serves.</p>
+<p>In Maysano, strategy is expressed as:</p>
+<ul>
+<li>the business objective the product supports</li>
+<li>the KPI(s) used to measure success</li>
+<li>the target consumer group or value stream</li>
+<li>the rationale for why the product exists</li>
+</ul>
+<p>This concept prevents “data products” from becoming technical artifacts without business justification.</p>
+<hr />
+<h2 id="6-business-objective">6. Business Objective<a class="headerlink" href="#6-business-objective" title="Permanent link"></a></h2>
+<p>A <strong>Business Objective</strong> defines what improvement the organization expects and why the data product exists. It is expressed in business language, not technical implementation language.</p>
+<p>A strong objective includes:</p>
+<ul>
+<li>a clear intent (what should improve)</li>
+<li>a measurable KPI</li>
+<li>a baseline and a target (where possible)</li>
+<li>a timeframe or review cadence</li>
+<li>an accountable outcome owner</li>
+</ul>
+<p>Objectives can be reused across multiple data products, allowing the organization to manage a portfolio of products contributing to the same business goal.</p>
+<hr />
+<h2 id="7-kpi-key-performance-indicator">7. KPI (Key Performance Indicator)<a class="headerlink" href="#7-kpi-key-performance-indicator" title="Permanent link"></a></h2>
+<p>A <strong>KPI</strong> is the measurable signal used to assess whether the data product is delivering value.</p>
+<p>In Maysano, KPIs are first-class objects so they can be:</p>
+<ul>
+<li>defined once and reused</li>
+<li>linked to objectives and products</li>
+<li>tracked consistently</li>
+<li>reviewed across time windows</li>
+</ul>
+<p>KPIs are business measures (e.g., satisfaction, conversion, efficiency, cost), not operational metrics (like pipeline duration).</p>
+<hr />
+<h2 id="8-governance-component-library">8. Governance Component Library<a class="headerlink" href="#8-governance-component-library" title="Permanent link"></a></h2>
+<p>A <strong>Governance Component</strong> is a reusable governance building block that can be attached to data products.</p>
+<p>Instead of re-writing governance rules for every product, Maysano promotes composability through a governance library.</p>
+<p>Typical components include:</p>
+<ul>
+<li><strong>Data Quality policy</strong> (dimensions, rules, thresholds)</li>
+<li><strong>SLA</strong> (availability, refresh frequency, incident response)</li>
+<li><strong>Data Access policy</strong> (who can access, how, under what conditions)</li>
+<li><strong>Support model</strong> (channels, response targets, escalation path)</li>
+<li><strong>License / Agreement terms</strong> (usage rights, restrictions)</li>
+</ul>
+<p>Components are defined once and reused many times to ensure consistency.</p>
+<hr />
+<h2 id="9-policy-vs-evidence">9. Policy vs. Evidence<a class="headerlink" href="#9-policy-vs-evidence" title="Permanent link"></a></h2>
+<p>Maysano separates what is <em>declared</em> from what is <em>observed</em>.</p>
+<ul>
+<li><strong>Policy</strong> describes what should be true (rules, thresholds, commitments).</li>
+<li><strong>Evidence</strong> shows what is actually true (measurements, logs, checks, incidents).</li>
+</ul>
+<p>This separation is essential for operational governance, because governance is not documentation—it is continuously validated reality.</p>
+<hr />
+<h2 id="10-quality-signal">10. Quality Signal<a class="headerlink" href="#10-quality-signal" title="Permanent link"></a></h2>
+<p>A <strong>Quality Signal</strong> is a measurable indicator that reflects whether the product meets the declared quality policy.</p>
+<p>Quality signals can include:
+- completeness, validity, timeliness, consistency scores
+- schema drift detection
+- freshness checks
+- failed rule counts and trend analysis</p>
+<p>Signals are not static “certificates.” They are monitored indicators that change as the world changes.</p>
+<hr />
+<h2 id="11-drift">11. Drift<a class="headerlink" href="#11-drift" title="Permanent link"></a></h2>
+<p><strong>Drift</strong> is any meaningful deviation between what was expected and what is happening now.</p>
+<p>Drift can appear as:</p>
+<ul>
+<li>schema changes</li>
+<li>quality degradation</li>
+<li>SLA breaches</li>
+<li>consumer impact (e.g., breaking changes)</li>
+<li>objective misalignment (product no longer supports the KPI)</li>
+</ul>
+<p>Maysano treats drift as something to surface early, not something to discover after failures.</p>
+<hr />
+<h2 id="12-approval-gate">12. Approval Gate<a class="headerlink" href="#12-approval-gate" title="Permanent link"></a></h2>
+<p>An <strong>Approval Gate</strong> is a decision checkpoint where a responsible role must explicitly approve before a product can move forward.</p>
+<p>Examples:</p>
+<ul>
+<li>Steward approval before production release</li>
+<li>Outcome owner validation before declaring an objective “on track”</li>
+<li>Admin approval for sensitive access policy changes</li>
+</ul>
+<p>Gates are designed to protect governance integrity without slowing down iteration.</p>
+<hr />
+<h2 id="13-operating-view">13. Operating View<a class="headerlink" href="#13-operating-view" title="Permanent link"></a></h2>
+<p>Maysano’s views are designed around how people work, not around how data is stored.</p>
+<p>A typical product operating view brings together:</p>
+<ul>
+<li>the product strategy and objective</li>
+<li>governance components attached to the product</li>
+<li>current evidence (quality signals, incidents, drift)</li>
+<li>version history and change traceability</li>
+<li>role-relevant actions and approvals</li>
+</ul>
+<p>This is what turns a “data asset” into an operational product.</p>
+<hr />
               
             </div>
           </div><footer>

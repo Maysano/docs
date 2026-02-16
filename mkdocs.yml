@@ -37,8 +37,9 @@ nav:
       - Templates: product-model/templates.md
 
   - 3. Roles:
+      - Roles Overview: roles/rolesoverview.md
       - Product Manager: roles/product-manager.md
-      - Business Owner: roles/business-owner.md
+      - Outcome Owner: roles/business-owner.md
       - Steward: roles/steward.md
       - Admin: roles/admin.md
 
