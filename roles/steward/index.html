@@ -77,12 +77,44 @@
               </ul>
               <p class="caption"><span class="caption-text">3. Roles</span></p>
               <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../rolesoverview/">Roles Overview</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../product-manager/">Product Manager</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../business-owner/">Business Owner</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../business-owner/">Outcome Owner</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Steward</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#role-essence">Role Essence</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#core-accountability">Core Accountability</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#key-responsibilities">Key Responsibilities</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-maintain-the-governance-library">1) Maintain the Governance Library</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-review-product-governance-coverage">2) Review Product Governance Coverage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-approve-or-reject-new-governance-components">3) Approve or Reject New Governance Components</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-manage-component-lifecycle">4) Manage Component Lifecycle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-define-governance-standards">5) Define Governance Standards</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#explicit-non-responsibilities">Explicit Non-Responsibilities</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#decision-authority">Decision Authority</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#primary-outputs-in-maysano">Primary Outputs in Maysano</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#collaboration-model">Collaboration Model</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#interaction-with-ai">Interaction with AI</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#success-indicators">Success Indicators</a>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../admin/">Admin</a>
@@ -154,7 +186,148 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="steward">steward<a class="headerlink" href="#steward" title="Permanent link"></a></h1>
+                <h1 id="steward">Steward<a class="headerlink" href="#steward" title="Permanent link"></a></h1>
+<p><em>(Canonical: Data Product System Steward)</em></p>
+<p>The Steward in Maysano owns the <strong>governance system</strong>, not individual data products.</p>
+<p>This role ensures that governance components remain reusable, consistent, and scalable across the organization.</p>
+<p>If the Product Manager owns the product, the Steward owns the governance fabric that makes products trustworthy.</p>
+<hr />
+<h2 id="role-essence">Role Essence<a class="headerlink" href="#role-essence" title="Permanent link"></a></h2>
+<p>The Steward owns the <strong>quality and consistency of reusable governance components</strong>.</p>
+<p>This includes:</p>
+<ul>
+<li>Data Quality (DQ) profiles  </li>
+<li>SLA profiles  </li>
+<li>Access profiles  </li>
+<li>Pricing profiles (where applicable)  </li>
+<li>Governance templates  </li>
+<li>Component lifecycle management  </li>
+</ul>
+<p>The Steward ensures that governance remains structured and reusable rather than fragmented and product-specific.</p>
+<hr />
+<h2 id="core-accountability">Core Accountability<a class="headerlink" href="#core-accountability" title="Permanent link"></a></h2>
+<p>The Steward is accountable for:</p>
+<ul>
+<li>Governance library integrity</li>
+<li>Reusable component consistency</li>
+<li>Governance standardization</li>
+<li>Component lifecycle (creation, approval, versioning, deprecation)</li>
+<li>Preventing governance drift</li>
+</ul>
+<p>If governance becomes inconsistent or duplicated unnecessarily, the Steward has failed.</p>
+<hr />
+<h2 id="key-responsibilities">Key Responsibilities<a class="headerlink" href="#key-responsibilities" title="Permanent link"></a></h2>
+<h3 id="1-maintain-the-governance-library">1) Maintain the Governance Library<a class="headerlink" href="#1-maintain-the-governance-library" title="Permanent link"></a></h3>
+<p>The Steward:</p>
+<ul>
+<li>Creates reusable governance components</li>
+<li>Reviews new component proposals</li>
+<li>Ensures components follow structural standards</li>
+<li>Avoids unnecessary duplication</li>
+<li>Maintains clear naming and versioning</li>
+</ul>
+<p>Governance components should be reusable across multiple products.</p>
+<hr />
+<h3 id="2-review-product-governance-coverage">2) Review Product Governance Coverage<a class="headerlink" href="#2-review-product-governance-coverage" title="Permanent link"></a></h3>
+<p>The Steward evaluates whether:</p>
+<ul>
+<li>Selected components fit the product use case</li>
+<li>Required governance areas are covered</li>
+<li>DQ, SLA, Access, and other policies are coherent</li>
+<li>No structural gaps exist</li>
+</ul>
+<p>The Steward reviews — but does not define — product scope.</p>
+<hr />
+<h3 id="3-approve-or-reject-new-governance-components">3) Approve or Reject New Governance Components<a class="headerlink" href="#3-approve-or-reject-new-governance-components" title="Permanent link"></a></h3>
+<p>When a Product Manager proposes a new profile:</p>
+<ul>
+<li>The Steward evaluates necessity</li>
+<li>Checks overlap with existing profiles</li>
+<li>Ensures structural compliance</li>
+<li>Approves, refines, or rejects the proposal</li>
+</ul>
+<p>Reuse is preferred over creation.</p>
+<hr />
+<h3 id="4-manage-component-lifecycle">4) Manage Component Lifecycle<a class="headerlink" href="#4-manage-component-lifecycle" title="Permanent link"></a></h3>
+<p>The Steward manages:</p>
+<ul>
+<li>Versioning of governance components</li>
+<li>Deprecation policies</li>
+<li>Migration paths when components evolve</li>
+<li>Structural updates aligned with standards</li>
+</ul>
+<p>Governance evolution must remain traceable.</p>
+<hr />
+<h3 id="5-define-governance-standards">5) Define Governance Standards<a class="headerlink" href="#5-define-governance-standards" title="Permanent link"></a></h3>
+<p>The Steward defines:</p>
+<ul>
+<li>Naming conventions</li>
+<li>Required fields and validation rules</li>
+<li>Acceptance criteria for governance components</li>
+<li>Governance templates</li>
+</ul>
+<p>These standards enable scale and interoperability.</p>
+<hr />
+<h2 id="explicit-non-responsibilities">Explicit Non-Responsibilities<a class="headerlink" href="#explicit-non-responsibilities" title="Permanent link"></a></h2>
+<p>The Steward does not:</p>
+<ul>
+<li>Define business objectives</li>
+<li>Define outcome KPIs</li>
+<li>Define product scope</li>
+<li>Own product internal KPIs</li>
+<li>Configure platform infrastructure</li>
+</ul>
+<p>Governance oversight does not extend into business strategy or product ownership.</p>
+<hr />
+<h2 id="decision-authority">Decision Authority<a class="headerlink" href="#decision-authority" title="Permanent link"></a></h2>
+<p>The Steward has final authority over:</p>
+<ul>
+<li>Approval of governance components</li>
+<li>Governance template standards</li>
+<li>Reusable profile lifecycle</li>
+<li>Acceptance criteria for governance consistency</li>
+</ul>
+<p>No product can override governance standards.</p>
+<hr />
+<h2 id="primary-outputs-in-maysano">Primary Outputs in Maysano<a class="headerlink" href="#primary-outputs-in-maysano" title="Permanent link"></a></h2>
+<p>The Steward maintains:</p>
+<ul>
+<li>Governance library components</li>
+<li>DQ, SLA, Access, Pricing profiles</li>
+<li>Governance templates</li>
+<li>Versioned governance standards</li>
+<li>Governance validation rules</li>
+</ul>
+<hr />
+<h2 id="collaboration-model">Collaboration Model<a class="headerlink" href="#collaboration-model" title="Permanent link"></a></h2>
+<p>The Steward collaborates with:</p>
+<ul>
+<li><strong>Product Manager</strong> — to ensure proper component selection and reuse</li>
+<li><strong>Outcome Owner</strong> — indirectly, when governance impacts strategic measurability</li>
+<li><strong>Admin</strong> — when access policies intersect with platform enforcement</li>
+</ul>
+<p>The Steward safeguards consistency. The Product Manager applies governance to products.</p>
+<hr />
+<h2 id="interaction-with-ai">Interaction with AI<a class="headerlink" href="#interaction-with-ai" title="Permanent link"></a></h2>
+<p>AI can support the Steward by:</p>
+<ul>
+<li>Detecting governance inconsistencies</li>
+<li>Identifying duplicate or overlapping components</li>
+<li>Suggesting reusable profiles</li>
+<li>Validating structural completeness</li>
+</ul>
+<p>AI can recommend. The Steward approves.</p>
+<hr />
+<h2 id="success-indicators">Success Indicators<a class="headerlink" href="#success-indicators" title="Permanent link"></a></h2>
+<p>A Steward is successful when:</p>
+<ul>
+<li>Governance components are reused across products</li>
+<li>Governance remains consistent over time</li>
+<li>New components are created only when necessary</li>
+<li>Standards are clear and adopted</li>
+<li>Governance supports scale without slowing innovation</li>
+</ul>
+<p>The Steward ensures that governance is an enabler — not an obstacle.</p>
               
             </div>
           </div><footer>
